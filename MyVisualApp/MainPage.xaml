@@ -1,0 +1,25 @@
+﻿<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyVisualApp.MainPage"
+    Title="Ana Sayfa"
+    BackgroundColor="White">
+
+    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+        <!-- Öğrenci Bilgileri -->
+        <Image Source="profile.jpeg"
+           HeightRequest="150"
+           WidthRequest="150"
+           Aspect="AspectFill"
+           HorizontalOptions="Center" />
+        <Label Text="Ad Soyad: Ensar Şahan Eren"
+           FontSize="20"
+           HorizontalOptions="Center" />
+        <Label Text="Numara:22010310030"
+               FontSize="20"
+               HorizontalOptions="Center"/>
+        <Label Text="Bartın Üniversitesi Bilgisayar Mühendisliği Bölümü"
+           FontSize="18"
+           HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

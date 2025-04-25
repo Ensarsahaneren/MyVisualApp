@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyVisualApp.Pages.BMICalculatorPage"
+    Title="VKİ Hesaplama"
+    Padding="20">
+
+    <VerticalStackLayout Spacing="20">
+
+        <!-- Formül Başlığı -->
+        <Label
+      Text="VKİ = kg / (boy * boy)"
+      FontSize="20"
+      FontAttributes="Bold"
+      TextColor="Orange"
+      HorizontalOptions="Center" />
+
+        <!-- Kilo Girişi -->
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+            <Label Text="Kilo (kg):" VerticalOptions="Center"/>
+            <Entry
+        x:Name="WeightEntry"
+        WidthRequest="80"
+        Keyboard="Numeric"
+        Placeholder="Örn: 70.0"
+        TextChanged="WeightEntry_TextChanged"/>
+        </HorizontalStackLayout>
+        <Slider
+      x:Name="WeightSlider"
+      Minimum="30" Maximum="200"
+      ValueChanged="WeightSlider_ValueChanged"
+      HorizontalOptions="FillAndExpand"/>
+
+        <!-- Boy Girişi -->
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+            <Label Text="Boy (cm):" VerticalOptions="Center"/>
+            <Entry
+        x:Name="HeightEntry"
+        WidthRequest="80"
+        Keyboard="Numeric"
+        Placeholder="Örn: 170.0"
+        TextChanged="HeightEntry_TextChanged"/>
+        </HorizontalStackLayout>
+        <Slider
+      x:Name="HeightSlider"
+      Minimum="100" Maximum="220"
+      ValueChanged="HeightSlider_ValueChanged"
+      HorizontalOptions="FillAndExpand"/>
+
+        <!-- VKİ Sonucu -->
+        <Label
+      x:Name="BmiLabel"
+      FontSize="24"
+      TextColor="DarkBlue"
+      HorizontalOptions="Center"/>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,42 @@
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyVisualApp.Pages.ColorPickerPage"
+    Title="Renk Seçici"
+    Padding="20">
+
+    <VerticalStackLayout Spacing="15">
+        <!-- Slider & Label -->
+        <Label Text="Kırmızı" />
+        <Slider x:Name="RedSlider"
+            Minimum="0"
+            Maximum="255"
+            ValueChanged="OnColorChanged" />
+        <Label x:Name="RedLabel" Text="R: 0" />
+
+        <Label Text="Yeşil" />
+        <Slider x:Name="GreenSlider"
+            Minimum="0"
+            Maximum="255"
+            ValueChanged="OnColorChanged" />
+        <Label x:Name="GreenLabel" Text="G: 0" />
+
+        <Label Text="Mavi" />
+        <Slider x:Name="BlueSlider"
+            Minimum="0"
+            Maximum="255"
+            ValueChanged="OnColorChanged" />
+        <Label x:Name="BlueLabel" Text="B: 0" />
+
+        <Label x:Name="HexLabel"
+           FontSize="18"
+           HorizontalOptions="Center" />
+
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+            <Button Text="Kopyala"
+              Clicked="OnCopyClicked" />
+            <Button Text="Rastgele Renk"
+              Clicked="OnRandomClicked" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

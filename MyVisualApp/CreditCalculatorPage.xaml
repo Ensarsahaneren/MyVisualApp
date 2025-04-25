@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyVisualApp.Pages.CreditCalculatorPage"
+    Title="Kredi Hesaplama"
+    Padding="20">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20">
+
+            <!-- 1. Kredi Türü -->
+            <Label Text="Kredi Türü" FontAttributes="Bold" />
+            <Picker
+        x:Name="LoanTypePicker"
+        Title="Seçiniz" />
+
+            <!-- 2. Kredi Tutarı -->
+            <Label Text="Kredi Tutarı (TL)" FontAttributes="Bold" />
+            <Entry
+        x:Name="AmountEntry"
+        Keyboard="Numeric"
+        Placeholder="Örn: 10000" />
+
+            <!-- 3. Faiz Oranı -->
+            <Label Text="Faiz Oranı (%)" FontAttributes="Bold" />
+            <Entry
+        x:Name="RateEntry"
+        Keyboard="Numeric"
+        Placeholder="Örn: 1.39" />
+
+            <!-- 4. Vade (Ay): Entry + Slider -->
+            <Grid RowSpacing="0" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Vade Label + Entry -->
+                <Label Text="Vade (Ay)" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+                <Entry
+          x:Name="TermEntry"
+          Grid.Row="0" Grid.Column="1"
+          Keyboard="Numeric"
+          HorizontalTextAlignment="End"
+          TextChanged="TermEntry_TextChanged"
+          Placeholder="1" />
+
+                <!-- Vade Slider -->
+                <Slider
+          x:Name="TermSlider"
+          Grid.Row="1" Grid.Column="0"
+          Grid.ColumnSpan="2"
+          Minimum="1" Maximum="120"
+          ValueChanged="TermSlider_ValueChanged"
+          HorizontalOptions="FillAndExpand" />
+            </Grid>
+
+            <!-- 5. Hesapla Butonu -->
+            <Button
+        Text="Hesapla"
+        FontAttributes="Bold"
+        BackgroundColor="#6200EE"
+        TextColor="White"
+        Clicked="OnCalculateClicked" />
+
+            <!-- 6. Sonuç Etiketleri -->
+            <Label x:Name="MonthlyPaymentLabel" Text="Aylık Taksit: — ₺" FontSize="16" />
+            <Label x:Name="TotalPaymentLabel"   Text="Toplam Ödeme: — ₺" FontSize="16" />
+            <Label x:Name="TotalInterestLabel"  Text="Toplam Faiz: — ₺"  FontSize="16" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
